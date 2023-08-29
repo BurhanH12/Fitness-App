@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+input[type="email"]:focus ~ .input-text,
+input[type="email"]:not(:placeholder-shown) ~ .input-text{
+  @apply text-blue-500 bg-white transform -translate-y-5 -translate-x-2 scale-75;
+}
+
+
+input[type="password"]:focus ~ .input-text2,
+input[type="password"]:not(:placeholder-shown) ~ .input-text2{
+  @apply text-blue-500 bg-white transform -translate-y-5 -translate-x-2 scale-75;
+}
