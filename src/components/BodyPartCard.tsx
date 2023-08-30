@@ -25,7 +25,7 @@ const BodyPartCard: React.FC = () => {
     // Add more mappings for other body parts
   };
 
-  const bodyPartNameToKey: { [name: string]: string } = {
+  const bodyPartNameToKey: { [name: string]: any } = {
     "lower arms": "lowerarm", // Map body part names with spaces to keys
     "lower legs": "lowerlegs",
     "upper arms": "upperarms",
@@ -99,6 +99,7 @@ const BodyPartCard: React.FC = () => {
                 className="mx-auto h-64 w-64 rounded-full object-cover "
                 src={bodyPartImages[bodyPartNameToKey[bodyPart.toLowerCase()]]}
                 alt=""
+                draggable="false"
               />
             </a>
             <div className="p-5">

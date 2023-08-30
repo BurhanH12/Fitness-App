@@ -38,14 +38,16 @@ const Test = () => {
     values.height = parseFloat(values.height);
     values.weight = parseFloat(values.weight);
   
-    values.email = email;
+    if (email) {
+      values.email = email;
+    }
   
     console.log(values);
     updateUser.mutate(values);
   }
   
   useEffect(() => {
-    const userString: string | null = localStorage.getItem("User");
+    const userString:any = localStorage.getItem("User");
     const userObject = JSON.parse(userString);
     const email = userObject.email;
     setEmail(email);
@@ -143,7 +145,7 @@ const Test = () => {
                   </div>
                   {currentStep === 1 && (
                     <form>
-                      <p className="mb-4">Provide Additional Information</p>
+                      <p className="mb-4 text-center text-2xl text-[#4b4a4a]">Basic Information</p>
 
                       {/* Age input */}
                       <div className="mb-4">
@@ -221,7 +223,7 @@ const Test = () => {
 
                   {currentStep === 2 && (
                     <form onSubmit={handleSubmit(onSubmit)}>
-                      <p className="mb-4">Provide Additional Information</p>
+                      <p className="mb-4 text-center text-2xl text-[#4b4a4a]">Fitness Information</p>
 
                       {/* Workout Time input */}
                       <div className="mb-4">
